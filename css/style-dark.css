@@ -35,7 +35,6 @@ Table of Content
 	padding: 0;
 	font-family: inherit;
 	outline: none !important;
-	list-style: none !important;
 	text-decoration: none !important;
 }
 
@@ -1087,15 +1086,18 @@ blockquote:before,
 	z-index: 1;
 }
 
-.pt-home .social ul li {
-	display: inline-block;
+.pt-home .social ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0;
 }
 
 .pt-home .social ul li i {
 	color: #fff;
 	width: 40px;
 	height: 40px;
-	font-size: 16px;
+	font-size: 24px;
 	line-height: 40px;
 	text-align: center;
 	-webkit-transition: all .5s ease;
@@ -1152,6 +1154,10 @@ blockquote:before,
 	color: #fff;
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+
+.list-type-disc {
+	padding: 0 0 0 1.5rem;
 }
 
 .pt-about .info p {
@@ -1459,6 +1465,10 @@ blockquote:before,
 	z-index: 1;
 }
 
+.pt-resume .experience .main h4.current:before {
+	background-color: #00a3e1;
+}
+
 .pt-resume .experience .item:hover h4:before {
 	background-color: #fff;
 	-webkit-transition: all .3s;
@@ -1477,7 +1487,7 @@ blockquote:before,
 
 .pt-resume .skill-item .progress {
 	height: 8px;
-	background-color: #0e0f10;
+	background-color: #24282c;
 	margin-bottom: 40px;
 	overflow: visible;
 }
@@ -1758,137 +1768,6 @@ blockquote:before,
 	opacity: 1; 
 	-webkit-transform: translateX(0%);
 			transform: translateX(0%);
-}
-
-/* ---------------------------------
-		8. Blog Section
---------------------------------- */
-.pt-blog .blog-item {
-	position: relative;
-	padding: 0 20px 20px;
-	margin-bottom: 50px;
-	background-color: rgba(0, 0, 0, .5);
-	-webkit-transition: all .3s ease-in-out;
-			transition: all .3s ease-in-out;
-}
-
-.pt-blog .blog-item:hover {
-	-webkit-transform: translateY(-3px) scale(1.01);
-			transform: translateY(-3px) scale(1.01);
-}
-
-.pt-blog .blog-item h4 {
-	font-weight: 600;
-	text-align: center;
-	text-transform: uppercase;
-	margin: 30px 0;
-}
-
-.pt-blog .blog-item .thumbnail {
-	position: relative;
-	overflow: hidden;
-	margin: 0 -20px;
-}
-
-.pt-blog .blog-item .thumbnail img {
-	width: 100%;
-	-webkit-transition: all 1s;
-    		transition: all 1s;
-}
-
-.pt-blog .blog-item:hover .thumbnail img {
-	-webkit-transform: scale(1.1);
-			transform: scale(1.1);
-}
-
-.pt-blog .blog-item .thumbnail .btn-play {
-	position: absolute;
-	width: 60px;
-	height: 60px;
-	top: calc(50% - 30px);
-	left: calc(50% - 30px);
-	display: inline-block;
-	border: none;
-	-webkit-transition: all .3s ease-in-out;
-			transition: all .3s ease-in-out;
-}
-
-.pt-blog .blog-item .thumbnail .btn-play:before {
-	content: ' ';
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	-webkit-border-radius: 50%;
-			border-radius: 50%;
-	background-color: #fff;
-	-webkit-box-shadow: 0 0 50px 0 rgb(14, 15, 16);
-			box-shadow: 0 0 50px 0 rgb(14, 15, 16);
-	-webkit-transition: all .3s ease-in-out;
-			transition: all .3s ease-in-out;
-}
-.pt-blog .blog-item .thumbnail .btn-play:after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-style: solid;
-	border-width: 5px 0 5px 10px;
-	border-color: transparent transparent transparent #0e0f10;
-	-webkit-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-	-webkit-transition: all .3s ease-in-out;
-			transition: all .3s ease-in-out;
-}
-
-.pt-blog .blog-item .thumbnail .btn-play:hover:before {
-	-webkit-transform: scale(1.2, 1.2);
-    		transform: scale(1.2, 1.2);
-}
-
-.pt-blog .blog-item .thumbnail .btn-play:hover:after {
-	border-color: transparent transparent transparent #0e0f10;
-}
-
-.pt-blog .blog-item ul {
-	position: relative;
-	display: block;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.pt-blog .blog-item ul li  {
-    display: inline-block;
-    font-size: 13px;
-}
-
-.pt-blog .blog-item ul li:not(:last-child):after {
-	content: '';
-	display: inline-block;
-	width: 5px;
-	height: 5px;
-	margin: 0 8px;
-	vertical-align: middle;
-	background-color: #fff;
-	-webkit-border-radius: 50%;
-			border-radius: 50%;
-}
-
-.pt-blog .blog-item .blog-btn {
-	position: relative;
-    text-align: center;
-    margin: 40px 0 10px;
-}
-
-.pt-blog .blog-item .blog-btn:before {
-    content: '';
-    position: absolute;
-	height: 4px;
-    width: calc(100% + 40px);
-    top: -25px;
-    left: -20px;
-    background: #0e0f10;
 }
 
 /* ---------------------------------
@@ -2776,8 +2655,7 @@ blockquote:before,
 	.header-main ul li {
 		font-size: 25px;
 	}
-	.header-main .logo,
-	.music-bg {
+	.header-main .logo {
 		padding: 20px 0;
 	}
 	.page .mob-mt {
